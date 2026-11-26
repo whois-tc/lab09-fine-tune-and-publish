@@ -1,0 +1,11 @@
+# Fine-tuning findings for the Lakeshore support team
+
+At 400 training tickets, full DistilBERT averaged 90.83% validation accuracy across three seeds versus 87.36% for TF-IDF and logistic regression; on the 240 held-out test tickets, the selected DistilBERT run scored 90.00% versus 84.58% for TF-IDF.
+
+The learning curve shows that the value of fine-tuning depended on how much labelled data was available. At 100 tickets, full DistilBERT averaged 78.06% and TF-IDF averaged 77.08%. Their ranges overlapped substantially, so a difference of less than one percentage point was not enough to justify the more complex model. At 400 tickets, all three full DistilBERT runs scored above every TF-IDF run. The head-only variant never beat TF-IDF, even at 400 tickets, where it averaged 53.75%.
+
+One possible explanation is that even a small sample contains recurring words and phrases that TF-IDF can use to distinguish the queues. Another is that full DistilBERT needs more examples before updating the pretrained layers pays off. I checked how the gap changed across training sizes and whether it held across seeds, using the same samples and validation rows for each method. That shows when the advantage appeared, but it does not prove why the models behaved differently.
+
+On the separate set of 40 AI-written messages, both models got 34 correct. TF-IDF had a slightly higher macro F1, 0.8527 versus 0.8445. The advantage on the generator's test set did not carry over to this small set. That is a reason to question whether the generator flatters either model, not proof that the result would reverse on actual support tickets.
+
+I recommend starting with TF-IDF for a human-reviewed pilot. It is simpler to maintain, and the separate check did not establish that DistilBERT was worth the added complexity. I would change that recommendation if a larger evaluation on recent, anonymized support tickets showed a consistent improvement for DistilBERT, especially for queues where a wrong assignment delays help. Neither evaluation here establishes how either model would handle real ticket volume or changes in customer wording.
