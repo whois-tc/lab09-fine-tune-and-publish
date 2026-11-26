@@ -1,0 +1,39 @@
+{
+  "settings": {
+    "method": "full",
+    "train_size": 400,
+    "seed": 2026,
+    "epochs": 3,
+    "learning_rate": 5e-05
+  },
+  "test": {
+    "n_rows": 240,
+    "most_common": {
+      "accuracy": 0.2875,
+      "macro_f1": 0.1117
+    },
+    "tfidf_logistic": {
+      "accuracy": 0.8458,
+      "macro_f1": 0.845
+    },
+    "full": {
+      "accuracy": 0.9,
+      "macro_f1": 0.9007
+    }
+  },
+  "own_messages": {
+    "n_rows": 40,
+    "most_common": {
+      "accuracy": 0.25,
+      "macro_f1": 0.1
+    },
+    "tfidf_logistic": {
+      "accuracy": 0.875,
+      "macro_f1": 0.8745
+    },
+    "full": {
+      "accuracy": 0.825,
+      "macro_f1": 0.8191
+    }
+  }
+}

@@ -8,6 +8,7 @@ from sklearn.metrics import accuracy_score
 
 from baselines import fit_baselines
 from evaluate import plot_learning_curve
+from final_evaluation import run_final_evaluation
 from finetune import train_distilbert
 from prepare import SPLIT_SEED, sample_training_rows, split_tickets
 from tickets_data import make_tickets
@@ -63,10 +64,16 @@ def run_grid(train, validation):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--smoke", action="store_true")
+    run_mode = parser.add_mutually_exclusive_group()
+    run_mode.add_argument("--smoke", action="store_true")
+    run_mode.add_argument("--final-only", action="store_true")
     args = parser.parse_args()
 
-    train, validation, _ = split_tickets(make_tickets())
+    train, validation, test = split_tickets(make_tickets())
+
+    if args.final_only:
+        run_final_evaluation(train, validation, test, REPORT_DIR, LEARNING_RATE)
+        return
 
     if args.smoke:
         sample = sample_training_rows(train, size=24, seed=SPLIT_SEED)
@@ -109,6 +116,8 @@ def main():
     print(f"\nSelected epoch for both DistilBERT modes: {selected_epoch}")
     print(summary.to_string(index=False))
     print(f"\nSaved {len(results)} comparison rows to {REPORT_DIR / 'results.csv'}")
+
+    run_final_evaluation(train, validation, test, REPORT_DIR, LEARNING_RATE)
 
 
 if __name__ == "__main__":

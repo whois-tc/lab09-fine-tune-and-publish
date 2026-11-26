@@ -1,0 +1,41 @@
+text,label
+"Why was I charged twice when I bought one day pass?",billing
+"Where do I download my recipt for yesterday's ride?",billing
+"I was over charged when but my ride ended early",billing
+"Your app showed a student price but my receipt shows the full price.",billing
+"I'm still waiting on my refund.",billing
+"Why is the security deposit still pending after I returned the bike?",billing
+"I cancelled before renewal yet you charged my card anyway.",billing
+"My payment went through but the app says I still owe $8.",billing
+"Can you explain the extra fee on my invoice? It doesn't say what it's for.",billing
+"I used a promo code at checkout but it didnt come off the total.",billing
+"The front brake doesn't work.",bike_fault
+"My seat keeps sliding down.",bike_fault
+"The pedal came loose halfway through the ride and I didn't do anything to it.",bike_fault
+"My bikehas a flat back tire.",bike_fault
+"The chain slips every time I ride uphill.",bike_fault
+"The handlebars wobble when I turn left.",bike_fault
+"The bell doesn't do anything, this is the third bike I've had this issue with!",bike_fault
+"The electric assist glitches and the battery is full so I don't know what's going on.",bike_fault
+"The front light wont turn on.",bike_fault
+"There's a scraping sound from the front wheel every time it spins.",bike_fault
+"I pushed the bike into dock 4 but it won't click in.",station
+"The kiosk screen at the library station is blank.",station
+"The station shows open spaces in the app but it's full.",station
+"Your app didn't update the construction at this station so where's the next one?",station
+"The keypad on dock 6 keeps resetting when I press a numeber.",station
+"All the docks at this station are flashing red.",station
+"There's a broken bike at the station taking up two spaces.",station
+"The map marker is across the road from where the station is.",station
+"The kiosk keeps restarting before I can select a bike.",station
+"The return dock is stuck open and won't hold the bike.",station
+"The password reset email never showed up, I checked my spam and junk mail too.",account
+"I changed phone numbers and can't receive the login code anymore.",account
+"How do I update the email address on my profile?",account
+"My account got locked after I forgot my password.",account
+"I accidentally created two profiles. Can you merge them?",account
+"Please delete my profile and the personal information linked to it.",account
+"The app signs me out every time I open it.",account
+"I can log in on the website but the same password doesn't work in the app.",account
+"My profile still shows my old name after I save the new one.",account
+"The verification link says expired everytime I click it but I literally just got it?",account
